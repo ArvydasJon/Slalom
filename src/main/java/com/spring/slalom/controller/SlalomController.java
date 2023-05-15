@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -31,5 +32,22 @@ public class SlalomController {
         model.addAttribute("tricks2",trickDAO.findEntities() );
         return "listOfAllTricks3";
     }
+
+    @GetMapping("/addTrick")
+    public String addTrick(@RequestParam HashMap<String, String> inputForm){
+        String 	trick_name= inputForm.get("trick_name");
+        String 	trick_type= inputForm.get("trick_type");
+        char trick_level= inputForm.get("trick_level").charAt(0);
+        int trick_score = Integer.parseInt(inputForm.get("trick_score"));
+        boolean official_score = Boolean.parseBoolean(inputForm.get("official_score"));
+        String 	trick_name2= inputForm.get("trick_name2");
+        String 	link= inputForm.get("link");
+
+
+        trickDAO.insertEntity(new Trick(trick_name,trick_type,trick_level,trick_score,official_score,trick_name2,link));
+
+        return "listOfAllTricks3";
+    }
+
 
 }

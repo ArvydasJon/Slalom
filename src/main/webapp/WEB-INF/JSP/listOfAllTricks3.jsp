@@ -54,7 +54,7 @@
                 <th>trick_score</th>
                 <th>official_score</th>
 				<th>trick_name2</th>
-				<th>link</th>
+				<th>video</th>
             </tr>
 			
 			            <c:forEach var="element" items="${tricks2}">
