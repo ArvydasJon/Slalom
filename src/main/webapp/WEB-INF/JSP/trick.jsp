@@ -4,6 +4,11 @@
 		<title>TRICK</title>
 		<jsp:include page="header.jsp"/>
 	</head>
+	    <style>
+            body {
+                      background-color: #A5FFC9;
+                    }
+        </style>
 	<body class="container">
 		<div class="table-responsive">
         <caption>TRICK INFO</caption>

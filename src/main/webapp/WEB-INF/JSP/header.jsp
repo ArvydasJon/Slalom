@@ -17,6 +17,9 @@
     <ul class="nav navbar-nav navbar-auto">
       <li>
         <span style="font-size: 2.2em; font-weight: bold; color: blue;">WE LOVE SLALOM</span>
+                <button type="button" class="btn btn-primary ml-3">
+                  <a href="/" style="color: white;">Go to trick list</a>
+                </button>
         <button type="button" class="btn btn-primary ml-3">
           <a href="/addTrick" style="color: white;">Add new trick</a>
         </button>

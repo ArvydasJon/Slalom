@@ -44,8 +44,6 @@
     <div class="table-responsive">
 
         <h2>LIST OF ALL TRICKS</h2>
-        <!--h3>Skaičiuotuvas jautrus neigiamiems skaičiams</h3-->
-
   <table class="table table-striped table-light">
             <tr>
                 <th>trick_name</th>
