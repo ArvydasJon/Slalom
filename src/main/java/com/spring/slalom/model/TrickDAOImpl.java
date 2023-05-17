@@ -32,4 +32,35 @@ public class TrickDAOImpl implements TrickDAO {
 
         return tricks;
     }
+
+    @Override
+    public void removeEntityById(int id) {
+        EntityManager entityManager= JPAUtil.getEntityManagerFactory().createEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+
+        Trick trickDB= entityManager.find(Trick.class, id);
+        entityManager.remove(trickDB);
+
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
+
+    @Override
+    public Trick findEntityById(int id) {
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+
+        List<Trick> tricks = entityManager
+                .createQuery("SELECT n FROM Trick n WHERE n.id = :id")
+                .setParameter("id", id)
+                .getResultList();
+
+        entityManager.getTransaction().commit();
+        entityManager.close();
+
+        return tricks.get(0);
+    }
 }

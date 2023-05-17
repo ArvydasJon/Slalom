@@ -31,6 +31,7 @@ public class Trick {
     @Column(name = "link")
     private String link;
 
+
     public Trick() {
     }
 

@@ -15,5 +15,4 @@ public class SlalomApplication {
 		SpringApplication.run(SlalomApplication.class, args);
 
 	}
-
 }
