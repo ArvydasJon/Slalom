@@ -13,4 +13,6 @@ public interface TrickDAO {
 
     Trick findEntityById(int id);
 
+    void updateEntity(Trick trick);
+
 }

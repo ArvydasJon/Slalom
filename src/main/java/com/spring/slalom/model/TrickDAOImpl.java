@@ -63,4 +63,26 @@ public class TrickDAOImpl implements TrickDAO {
 
         return tricks.get(0);
     }
+
+    @Override
+    public void updateEntity(Trick trick) {
+        EntityManager entityManager= JPAUtil.getEntityManagerFactory().createEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+
+        //Kad atnaujinti įrašą reikia jį surasti DB
+        Trick trickDB= entityManager.find(Trick.class, trick.getId());
+
+        trickDB.setTrick_name(trick.getTrick_name());
+        trickDB.setTrick_type(trick.getTrick_type());
+        trickDB.setTrick_level(trick.getTrick_level());
+        trickDB.setTrick_score(trick.getTrick_score());
+        trickDB.setOfficial_score(trick.isOfficial_score());
+        trickDB.setTrick_level(trick.getTrick_level());
+        trickDB.setTrick_name2(trick.getTrick_name2());
+        trickDB.setLink(trick.getLink());
+
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
 }

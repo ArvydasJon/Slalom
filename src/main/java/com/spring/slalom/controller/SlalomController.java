@@ -80,6 +80,16 @@ public class SlalomController {
         model.addAttribute("trick3",trickDAO.findEntityById(id));
         return "trick";
     }
+    @RequestMapping(method=RequestMethod.GET, value="/update{id}")
+    public String updateById(@RequestParam("id") int id,Model model){
+        model.addAttribute("number4",trickDAO.findEntityById(id));
+        return "update";
+    }
 
+    @RequestMapping(method=RequestMethod.POST, value="/updateNumber")
+    public String updateNumber(@ModelAttribute("number4")Trick trick){
+        trickDAO.updateEntity(trick);
+        return "redirect:/show?id="+trick.getId();
+    }
 
 }
