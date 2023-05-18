@@ -1,16 +1,19 @@
 package com.spring.slalom.model;
 
+import jakarta.validation.constraints.*;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "tricks")
 public class Trick {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//AKKA DB autoincrement f-ja
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
     @Column(name = "trick_name")
+    @NotEmpty(message = "Field cannot be empty")
     private String trick_name;
 
     @Column(name = "trick_type")
@@ -20,6 +23,7 @@ public class Trick {
     private char trick_level;
 
     @Column(name = "trick_score")
+    @Min(value = 0, message = "Number cannot be negative")
     private int trick_score;
 
     @Column(name = "official_score")

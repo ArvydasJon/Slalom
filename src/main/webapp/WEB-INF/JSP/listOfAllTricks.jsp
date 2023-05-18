@@ -6,6 +6,16 @@
         <title>LIST OF ALL TRICKSss</title>
         <jsp:include page="header.jsp"/>
         <style>
+        .frozen-header {
+            position: fixed;
+            top: 0;
+            left: 186;
+
+            width: 75%;
+            z-index: 9999;
+        }
+
+
                 body {
                   background-color: green;
                 }
@@ -37,10 +47,22 @@
                   background-color: #f8f9fa;
                 }
 
-
         </style>
     </head>
     <body class="container">
+
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 0) {
+                    $('.navbar').addClass('frozen-header');
+                } else {
+                    $('.navbar').removeClass('frozen-header');
+                }
+            });
+        });
+    </script>
+
     <div class="table-responsive">
 
         <h2>LIST OF ALL TRICKS</h2>

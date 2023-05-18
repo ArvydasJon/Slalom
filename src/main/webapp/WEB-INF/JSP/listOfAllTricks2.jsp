@@ -3,8 +3,6 @@
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 
 
-
-
 <html>
     <head>
         <title>LIST OF ALL TRICKSss</title>
@@ -13,7 +11,6 @@
             background-image: url(" https://drive.google.com/file/d/1kd9gMaW3FtKy1KtLDr5PyT8OiBBxrHwA/view?usp=sharing");
             <!-- background-color: green;-->
             <!--   background-image: url("http://localhost:8080/bandymas/Church1.jpg");-->
-
              }
             th {
               font-size: 1.2em; /* padidinti šriftą */
@@ -32,7 +29,7 @@
     <div class="table-responsive">
 
         <h2>LIST OF ALL TRICKS</h2>
-        <!--h3>Skaičiuotuvas jautrus neigiamiems skaičiams</h3-->
+
 
   <table class="table table-striped table-light">
             <tr>
